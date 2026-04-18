@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" data-theme="warm">
+<html lang="en" data-theme="mckinsey">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -211,80 +211,51 @@ a.cta-contact-value:hover { color:var(--gold-light); }
 </style>
 <style>
 :root,
-html[data-theme="warm"] {
-  --page:#f7f3ea;
-  --surface-hero:#f9f4ea;
-  --surface-1:#fcf8f1;
-  --surface-2:#f2eadb;
-  --surface-3:#eef4f7;
-  --surface-4:#fffdfa;
-  --footer:#efe5d6;
-  --gold:#b88738;
-  --gold-light:#d6a85f;
-  --white:#172634;
-  --text-muted:#627587;
-  --text-body:#32485d;
-  --line:rgba(32,50,68,.10);
-  --line-strong:rgba(32,50,68,.16);
-  --shadow-soft:0 18px 50px rgba(32,50,68,.08);
-  --shadow-card:0 12px 30px rgba(32,50,68,.07);
-}
-html[data-theme="sage"] {
-  --page:#f2f4ed;
-  --surface-hero:#f7f8f1;
-  --surface-1:#fbfcf7;
-  --surface-2:#e7ecdf;
-  --surface-3:#edf3ef;
-  --surface-4:#ffffff;
-  --footer:#e3e8db;
-  --gold:#8f7a3b;
-  --gold-light:#b79f63;
-  --white:#1a2822;
-  --text-muted:#66786f;
-  --text-body:#33483f;
-  --line:rgba(36,52,45,.10);
-  --line-strong:rgba(36,52,45,.16);
-  --shadow-soft:0 18px 50px rgba(36,52,45,.08);
-  --shadow-card:0 12px 30px rgba(36,52,45,.07);
-}
-html[data-theme="mist"] {
-  --page:#f4f6f7;
-  --surface-hero:#f8fbfc;
-  --surface-1:#ffffff;
-  --surface-2:#e9eef2;
+html[data-theme="mckinsey"] {
+  --page:#f1f5f8;
+  --surface-hero:#f7fbfd;
+  --surface-1:#fcfeff;
+  --surface-2:#dfeaf2;
   --surface-3:#edf4f8;
   --surface-4:#ffffff;
-  --footer:#e6edf1;
-  --gold:#94784e;
-  --gold-light:#b99c72;
-  --white:#162531;
-  --text-muted:#667a89;
-  --text-body:#334b5c;
-  --line:rgba(34,53,67,.10);
-  --line-strong:rgba(34,53,67,.16);
-  --shadow-soft:0 18px 50px rgba(34,53,67,.08);
-  --shadow-card:0 12px 30px rgba(34,53,67,.07);
+  --footer:#d7e3ec;
+  --gold:#0f5b8d;
+  --gold-light:#3a7ba7;
+  --white:#12283a;
+  --text-muted:#5e7383;
+  --text-body:#31495d;
+  --line:rgba(18,40,58,.10);
+  --line-strong:rgba(18,40,58,.16);
+  --shadow-soft:0 18px 50px rgba(18,40,58,.08);
+  --shadow-card:0 12px 30px rgba(18,40,58,.07);
+  --hero-accent-rgb:15,91,141;
+  --hero-secondary-rgb:98,124,146;
+  --badge-surface:rgba(255,255,255,.82);
+  --card-surface:rgba(255,255,255,.94);
+  --tag-surface:rgba(255,255,255,.84);
+  --cta-button:#16324a;
+  --cta-button-hover:#0f5b8d;
 }
 html, body { background:var(--page); }
 body { color:var(--white); font-size:17px; line-height:1.65; }
 .hero {
   background:
-    radial-gradient(ellipse at 76% 22%,rgba(214,168,95,.18) 0%,transparent 45%),
-    radial-gradient(ellipse at 18% 78%,rgba(88,114,132,.16) 0%,transparent 50%),
+    radial-gradient(ellipse at 76% 22%,rgba(var(--hero-accent-rgb),.18) 0%,transparent 45%),
+    radial-gradient(ellipse at 18% 78%,rgba(var(--hero-secondary-rgb),.16) 0%,transparent 50%),
     linear-gradient(180deg,var(--surface-hero) 0%,var(--surface-1) 55%,var(--surface-2) 100%);
   border-bottom:1px solid var(--line);
 }
 .hero::before { opacity:.78; }
-.orb-1 { background:rgba(214,168,95,.14); }
-.orb-2 { background:rgba(88,114,132,.14); }
-.orb-3 { background:rgba(184,135,56,.10); }
-.badge { font-size:12px; letter-spacing:3.5px; border-color:rgba(184,135,56,.24); background:rgba(255,255,255,.65); border-radius:999px; }
+.orb-1 { background:rgba(var(--hero-accent-rgb),.14); }
+.orb-2 { background:rgba(var(--hero-secondary-rgb),.14); }
+.orb-3 { background:rgba(var(--hero-accent-rgb),.10); }
+.badge { font-size:12px; letter-spacing:3.5px; border-color:rgba(var(--hero-accent-rgb),.24); background:var(--badge-surface); border-radius:999px; }
 .hero-tagline { font-size:13px; }
 .hero-title { font-size:clamp(60px,8vw,118px); color:var(--white); }
 .hero-subtitle { font-size:clamp(24px,2.8vw,34px); color:var(--text-body); }
 .hero-meta-label { font-size:11px; }
 .hero-meta-value { font-size:22px; color:var(--white); }
-.hero-quote { font-size:24px; color:var(--gold); text-shadow:0 10px 26px rgba(184,135,56,.10); }
+.hero-quote { font-size:24px; color:var(--gold); text-shadow:0 10px 26px rgba(var(--hero-accent-rgb),.10); }
 .scroll-indicator span { color:var(--text-muted); }
 section { background:var(--surface-1); }
 .theory-section { background:linear-gradient(180deg,var(--surface-1) 0%,var(--surface-3) 100%); }
@@ -301,7 +272,7 @@ section { background:var(--surface-1); }
 .section-heading { font-size:clamp(44px,4.8vw,68px); color:var(--white); }
 .theory-text p, .facilitator-bio { font-size:18px; color:var(--text-body); font-weight:400; }
 .benefit-card, .outcome-card, .testimonial-card, .faculty-review, .price-card, .audience-card {
-  background:rgba(255,255,255,.9);
+  background:var(--card-surface);
   border-color:var(--line);
   box-shadow:var(--shadow-card);
 }
@@ -310,14 +281,14 @@ section { background:var(--surface-1); }
 .benefit-desc, .outcome-desc, .agenda-item-desc, .price-note, .audience-list li, .cta-subtitle, .cta-contact-value { font-size:16px; color:var(--text-body); font-weight:400; }
 .agenda-tabs { border-bottom-color:var(--line-strong); }
 .agenda-item { border-bottom-color:var(--line); }
-.agenda-num { color:rgba(184,135,56,.42); }
+.agenda-num { color:rgba(var(--hero-accent-rgb),.42); }
 .testimonial-text, .faculty-review p { color:var(--white); font-size:20px; }
 .testimonial-role, .price-gst { font-size:14px; color:var(--text-muted); }
 .price-type, .testimonial-author, .expertise-tag, .cta-contact-label, .theory-books-label { font-size:11px; font-weight:700; }
 .price-badge { color:#fff; border-radius:999px; }
-.expertise-tag { background:rgba(255,255,255,.75); border-color:rgba(184,135,56,.25); color:var(--gold); }
-.cta-btn { background:#203244; color:#fff; border-radius:999px; box-shadow:var(--shadow-card); }
-.cta-btn:hover { background:var(--gold); color:#fff; }
+.expertise-tag { background:var(--tag-surface); border-color:rgba(var(--hero-accent-rgb),.25); color:var(--gold); }
+.cta-btn { background:var(--cta-button); color:#fff; border-radius:999px; box-shadow:var(--shadow-card); }
+.cta-btn:hover { background:var(--cta-button-hover); color:#fff; }
 .journey-section, .clients-section, .clients-section-compact { background:linear-gradient(180deg,var(--surface-2) 0%,var(--surface-1) 100%); }
 .clients-section, .clients-section-compact { border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .section-lead, .audience-intro { font-size:17px; line-height:1.85; color:var(--text-body); font-weight:400; }
@@ -514,11 +485,11 @@ section { background:var(--surface-1); }
       <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">If you listen to people from the heart, you get to know a lot many things and can transform organizations better.</p><div class="testimonial-author">Harshal Shah</div><div class="testimonial-role">Founder &amp; Director</div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">The culture shift is: when you face a problem, park your reaction, think with a peaceful mind, and you arrive at a better solution.</p><div class="testimonial-author">Sanjay Chaturvedi</div><div class="testimonial-role">VP Sales</div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">During the case clinic journey, I understood that my problems are not the actual problem — you can solve them in a different way.</p><div class="testimonial-author">Rasesh Jani</div><div class="testimonial-role">Industry Professional, IT Industry</div></div>
-      <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">Until now if someone spoke, we would keep going without listening. After this program, being silent, thinking, and then replying — this is a very big thing.</p><div class="testimonial-author">Mahendra Kumar Yadav</div><div class="testimonial-role">Founder &amp; Director</div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">Until now if someone spoke, we would keep going without listening. After this program, being silent, thinking, and then replying — this is a very big thing.</p><div class="testimonial-author">Mahendra Kumar Yadav</div><div class="testimonial-role">Infrastructure Professional</div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">My patience improved and my ability to sense new possibilities that want to emerge has expanded. By letting go of fear, I'm open to new ideas and taking actions in those areas.</p><div class="testimonial-author">Sai Krishna Rao</div><div class="testimonial-role">Head – Education Initiative</div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">I apply insights from the emerging future in my decisions and the results are extraordinary. My relationship with my team, clients, and family is at a totally different level.</p><div class="testimonial-author">Sanjay Kumar</div><div class="testimonial-role">Entrepreneur &amp; IT Company Founder</div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">It is nothing about me as ego — it is completely eco. Even today the dialysis unit holds the space of healing. Patients come and get treated despite everything around it.</p><div class="testimonial-author">Usha Kulkarni</div><div class="testimonial-role">Healthcare Leader</div></div>
-      <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">I feel limitless right now. My boundaries opened up — the moment I opened up, I became resourceful to feed Kenyan refugees. Every week about 300 people get food, clothes, and dignity.</p><div class="testimonial-author">Jayeshri Kunju</div><div class="testimonial-role">Chartered Accountant &amp; CEO</div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">I feel limitless right now. My boundaries opened up — the moment I opened up, I became resourceful to feed Kenyan refugees. Every week about 300 people get food, clothes, and dignity.</p><div class="testimonial-author">Jayashree Kunju</div><div class="testimonial-role">Chartered Accountant &amp; CEO</div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">The greatest impact was on conversations — levels of listening created so much greater ways for me to be at ease in any kind of communication, from personal to professional to my global purpose.</p><div class="testimonial-author">Joy Perreras</div><div class="testimonial-role">Leadership Development Practitioner</div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">Theory U doesn't just teach you how to do things — it also teaches you how to do the right things. In 35 years across organisations, I found it has something very special for all of us.</p><div class="testimonial-author">Rajeev Bhadauria</div><div class="testimonial-role">Advisor – Corporate Affairs &amp; PR</div></div>
     </div>
