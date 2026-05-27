@@ -612,3 +612,250 @@ section { background:var(--surface-1); }
 </script>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Register — Creating Future Ready Organisations</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1522;--navy2:#162035;--gold:#C59B3A;--gold-l:#E2C47A;--rust:#B5491A;--white:#FFFFFF;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;
+  background-image:linear-gradient(rgba(197,155,58,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(197,155,58,.05) 1px,transparent 1px);
+  background-size:44px 44px;}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy) 55%,#1a2b4a);padding:36px 20px 28px;text-align:center;
+  border-bottom:1px solid rgba(197,155,58,.2);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(197,155,58,.12),transparent 70%);}
+.badge{display:inline-block;font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(197,155,58,.35);padding:5px 14px;margin-bottom:16px;position:relative;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,7vw,44px);font-weight:300;line-height:1.05;position:relative;}
+.hero h1 em{font-style:italic;color:var(--gold);display:block;}
+.hero-sub{margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6;position:relative;}
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px;position:relative;}
+.pill{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.12);padding:5px 11px;}
+
+/* LAYOUT */
+.container{max-width:560px;margin:0 auto;padding:24px 16px 60px;}
+.section-label{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+
+/* PRICE CARDS */
+.price-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+.price-card{background:rgba(255,255,255,.04);border:1px solid rgba(197,155,58,.2);padding:18px 16px;
+  position:relative;cursor:pointer;transition:all .2s;-webkit-user-select:none;user-select:none;}
+.price-card:active,.price-card.selected{background:rgba(197,155,58,.1);border-color:var(--gold);}
+.price-card.selected::after{content:'✓';position:absolute;top:10px;right:12px;color:var(--gold);font-size:14px;font-weight:700;}
+.best-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;padding:2px 7px;margin-bottom:8px;font-weight:700;}
+.price-tier{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:7px;}
+.price-amount{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--gold);line-height:1;}
+.price-amount sup{font-size:15px;vertical-align:top;margin-top:4px;}
+.price-gst{font-size:10px;color:rgba(255,255,255,.35);margin-top:4px;}
+.price-desc{font-size:10px;color:rgba(255,255,255,.5);margin-top:8px;line-height:1.55;font-weight:300;}
+
+/* PAY BUTTONS */
+.pay-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;}
+.pay-btn{display:block;text-align:center;text-decoration:none;padding:22px 12px;
+  font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;transition:all .2s;border:none;cursor:pointer;}
+.pay-btn.individual{background:var(--gold);color:var(--navy);}
+.pay-btn.individual:hover,.pay-btn.individual:active{background:var(--gold-l);}
+.pay-btn.group{background:transparent;color:var(--gold);border:1px solid var(--gold);}
+.pay-btn.group:hover,.pay-btn.group:active{background:rgba(197,155,58,.1);}
+.pay-btn small{display:block;font-size:8px;letter-spacing:.5px;opacity:.7;margin-top:3px;font-weight:400;text-transform:none;}
+
+/* DIVIDER */
+
+
+
+
+/* FORM */
+.form-card{background:rgba(255,255,255,.03);border:1px solid rgba(197,155,58,.15);padding:24px 20px;margin-bottom:20px;}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:5px;}
+.form-sub{font-size:11px;color:rgba(255,255,255,.4);font-weight:300;margin-bottom:20px;line-height:1.65;}
+.form-row{margin-bottom:14px;}
+.form-row label{display:block;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:7px;font-weight:600;}
+.form-row input,.form-row select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:var(--white);font-family:'Jost',sans-serif;font-size:15px;padding:12px 14px;outline:none;
+  transition:border-color .2s;-webkit-appearance:none;appearance:none;border-radius:0;}
+.form-row select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23C59B3A'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;background-color:rgba(255,255,255,.06);cursor:pointer;}
+.form-row select option{background:var(--navy2);color:var(--white);}
+.form-row input:focus,.form-row select:focus{border-color:var(--gold);background:rgba(197,155,58,.06);}
+.form-row input::placeholder{color:rgba(255,255,255,.2);}
+.form-row input.error,.form-row select.error{border-color:var(--rust);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.submit-btn{width:100%;background:var(--rust);color:var(--white);border:none;padding:16px;
+  font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:10px;
+  border-radius:0;-webkit-appearance:none;display:flex;align-items:center;justify-content:center;gap:10px;}
+.submit-btn:hover,.submit-btn:active{background:#9a3d15;}
+.submit-btn:disabled{background:#555;cursor:not-allowed;}
+.spinner{display:none;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);
+  border-top-color:var(--white);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* SUCCESS */
+.success-msg{display:none;text-align:center;padding:32px 20px;
+  background:rgba(197,155,58,.08);border:1px solid rgba(197,155,58,.3);}
+.success-msg .tick{font-size:38px;margin-bottom:12px;}
+.success-msg h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold);margin-bottom:10px;}
+.success-msg p{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.7;font-weight:300;}
+
+/* ERROR BANNER */
+.error-banner{display:none;padding:14px 18px;background:rgba(181,73,26,.15);
+  border:1px solid rgba(181,73,26,.4);margin-bottom:14px;font-size:12px;color:#e06050;line-height:1.6;}
+
+/* BOTTOM SECTION */
+.bottom-section{background:var(--navy2);border-top:1px solid rgba(197,155,58,.2);}
+
+/* HELP ROW */
+.help-row{padding:32px 20px 28px;max-width:560px;margin:0 auto;}
+.help-label{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.help-label::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+.help-contacts{display:flex;flex-direction:column;gap:14px;}
+.help-item{display:flex;align-items:center;gap:16px;text-decoration:none;
+  padding:14px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  transition:all .2s;}
+.help-item:hover,.help-item:active{background:rgba(197,155,58,.08);border-color:rgba(197,155,58,.3);}
+.help-icon{font-size:18px;flex-shrink:0;width:28px;text-align:center;}
+.help-text{display:flex;flex-direction:column;gap:2px;}
+.help-type{font-size:8px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.35);font-weight:600;}
+.help-val{font-size:13px;color:rgba(255,255,255,.8);font-weight:300;}
+.schedule-item .help-val{color:var(--gold);}
+
+/* SITE FOOTER */
+.site-footer{background:var(--navy);border-top:1px solid rgba(197,155,58,.15);
+  padding:24px 20px;text-align:center;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;
+  color:var(--white);letter-spacing:1px;margin-bottom:2px;}
+.footer-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;}
+.footer-links{display:flex;justify-content:center;align-items:center;gap:10px;
+  flex-wrap:wrap;margin-bottom:10px;}
+.footer-links a{font-size:11px;color:rgba(255,255,255,.45);text-decoration:none;
+  transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-dot{color:rgba(255,255,255,.2);font-size:10px;}
+.footer-copy{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:.5px;}
+
+/* MOBILE */
+@media(max-width:460px){
+  .price-cards,.pay-buttons,.form-grid{grid-template-columns:1fr;}
+  .hero{padding:28px 16px 22px;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Flagship Executive Programme · Level 1</div>
+  <h1>Creating<br><em>Future Ready Organisations</em></h1>
+  <p class="hero-sub">Theory U · MIT Presencing Institute · Management Innovations<br>Facilitated by Dr. Manoj Onkar</p>
+  <div class="hero-pills">
+    <span class="pill">06,07 June 2026 - 8 am to 4 pm</span>
+    <span class="pill">5 Coaching Sessions</span>
+    <span class="pill">90-Day Transformation</span>
+    <span class="pill">Live Online</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="section-label">Choose Your Participation</div>
+  <div class="price-cards">
+    <div class="price-card selected" id="card-individual" onclick="selectType('individual')">
+      <div class="price-tier">Individual</div>
+      <div class="price-amount"><sup>&#8377;</sup>47,000</div>
+      <div class="price-gst">+ applicable GST</div>
+      <p class="price-desc">Full access to both days, all materials and post-workshop resources.</p>
+    </div>
+    <div class="price-card" id="card-group" onclick="selectType('group')">
+      <span class="best-badge">Best Value</span>
+      <div class="price-tier">Group &#8212; 3 or more</div>
+      <div class="price-amount"><sup>&#8377;</sup>40,000</div>
+      <div class="price-gst">+ GST &middot; per participant</div>
+      <p class="price-desc">3 or more from the same organisation. Maximise collective impact.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Register &amp; Pay</div>
+  <div class="pay-buttons">
+    <a class="pay-btn individual" href="https://rzp.io/rzp/CFRO1" target="_blank" rel="noopener">
+      Individual Registration<small>&#8377;47,000 + GST</small>
+    </a>
+    <a class="pay-btn group" href="https://rzp.io/rzp/CFRO" target="_blank" rel="noopener">
+      Group Registration<small>&#8377;40,000 per person + GST</small>
+    </a>
+  </div>
+
+
+  <div class="for
+
+
+</div>
+
+<div class="bottom-section">
+
+  <!-- NEED HELP ROW -->
+  <div class="help-row">
+    <div class="help-label">Need help deciding?</div>
+    <div class="help-contacts">
+      <a class="help-item" href="mailto:manoj@managementinnovations.co.in">
+        <span class="help-icon">&#9993;</span>
+        <span class="help-text">
+          <span class="help-type">Email</span>
+          <span class="help-val">manoj@managementinnovations.co.in</span>
+        </span>
+      </a>
+      <a class="help-item" href="https://wa.me/919106456725">
+        <span class="help-icon">&#128241;</span>
+        <span class="help-text">
+          <span class="help-type">WhatsApp</span>
+          <span class="help-val">+91 9106456275 &middot; Messages only</span>
+        </span>
+      </a>
+      <a class="help-item schedule-item" href="https://calendar.app.google/5Hp8KqfyBo98Ly3v9" target="_blank" rel="noopener">
+        <span class="help-icon">&#128197;</span>
+        <span class="help-text">
+          <span class="help-type">Schedule</span>
+          <span class="help-val">Book a 15-min call</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="site-footer">
+    <div class="footer-logo">Management Innovations</div>
+    <div class="footer-tag">Vision to Implementation</div>
+    <div class="footer-links">
+      <a href="https://www.managementinnovations.co.in" target="_blank" rel="noopener">managementinnovations.co.in</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.theoryuindia.com" target="_blank" rel="noopener">theoryuindia.com</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Management Innovations. All rights reserved.</div>
+  </div>
+
+</div>
+
+<script>
+function selectType(type) {
+  document.getElementById('card-individual').classList.toggle('selected', type==='individual');
+  document.getElementById('card-group').classList.toggle('selected', type==='group');
+}
+</script>
+</body>
+</html>
