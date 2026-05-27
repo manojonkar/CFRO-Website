@@ -69,6 +69,10 @@
         .theory-diagram-img { width:100%; border-radius:4px; border:1px solid rgba(201,168,76,.15); }
         .theory-books-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600; }
 
+        /* CLIENTS */
+        .clients-section { background:#060e1c; padding:80px 40px; }
+        .clients-img { width:100%; max-width:900px; margin:40px auto 0; display:block; opacity:.85; filter:brightness(1.1); }
+
         /* BENEFITS */
         .benefits-section { background:var(--navy); }
         .benefits-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px; border:1px solid rgba(201,168,76,.1); }
@@ -117,16 +121,16 @@
         .expertise-tags { display:flex; flex-wrap:wrap; gap:10px; margin-top:36px; }
         .expertise-tag { padding:7px 18px; border:1px solid rgba(201,168,76,.3); font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); border-radius:2px; }
 
-        /* CTA & BUTTONS */
-        .cta-section { background:linear-gradient(160deg,#050d1a 0%,#0a1628 60%,#0f2044 100%); text-align:center; padding:120px 40px; position:relative; overflow:hidden; }
+        /* CTA */
+        .cta-section { background:linear-gradient(160deg,#050d1a 0%,#0a1628 60%,#0f2044 100%); text-align:center; padding:120px 40px; position:relative; overflow:hidden; border-top: 1px solid rgba(255,255,255,0.1); }
         .cta-title { font-family:'Cormorant Garamond',serif; font-size:clamp(40px,6vw,80px); font-weight:300; line-height:1.1; margin-bottom:24px; position:relative; z-index:1; }
         .cta-title em { font-style:italic; color:var(--gold-light); }
         .cta-subtitle { font-size:14px; color:var(--text-muted); margin-bottom:50px; font-weight:300; max-width:600px; margin: 0 auto 50px; line-height:1.8; position:relative; z-index:1; }
-        .cta-btn-container { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; position:relative; z-index:1; }
+        .cta-btn-container { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; position:relative; z-index:1; margin-bottom: 50px; }
         .cta-btn { display:inline-block; padding:18px 45px; background:var(--gold); color:var(--navy); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; text-decoration:none; transition:all .3s ease; border-radius:2px; }
         .cta-btn:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 10px 30px rgba(201,168,76,0.3); }
 
-        .cta-contact { margin-top:56px; display:flex; justify-content:center; flex-wrap:wrap; gap:40px; position:relative; z-index:1; }
+        .cta-contact { display:flex; justify-content:center; flex-wrap:wrap; gap:40px; position:relative; z-index:1; }
         .cta-contact-item { text-align:center; }
         .cta-contact-label { font-size:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:rgba(201,168,76,.6); margin-bottom:6px; }
         .cta-contact-value { font-size:13px; color:var(--text-body); font-weight:300; text-decoration:none; }
@@ -137,14 +141,41 @@
         .footer-logo img { height:38px; display:block; }
         .footer-tagline { font-size:11px; color:var(--text-muted); letter-spacing:1px; }
 
-        /* ANIMATIONS */
-        @keyframes fadeInDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
-        @keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+        /* MCKINSEY THEME OVERRIDES */
+        :root, html[data-theme="mckinsey"] {
+            --page:#f1f5f8;
+            --surface-hero:#f7fbfd;
+            --surface-1:#fcfeff;
+            --surface-2:#dfeaf2;
+            --surface-3:#edf4f8;
+            --surface-4:#ffffff;
+            --footer:#d7e3ec;
+            --gold:#0f5b8d;
+            --gold-light:#3a7ba7;
+            --white:#12283a;
+            --text-muted:#5e7383;
+            --text-body:#31495d;
+            --line:rgba(18,40,58,.10);
+            --line-strong:rgba(18,40,58,.16);
+            --shadow-card:0 12px 30px rgba(18,40,58,.07);
+        }
+        html, body { background:var(--page); color:var(--white); font-size:17px; line-height:1.65; }
+        .hero { background: radial-gradient(ellipse at 76% 22%,rgba(15,91,141,.18) 0%,transparent 45%), linear-gradient(180deg,var(--surface-hero) 0%,var(--surface-2) 100%); border-bottom:1px solid var(--line); }
+        .badge { background:rgba(255,255,255,.82); border-radius:999px; color:var(--gold); }
+        .hero-title, .facilitator-name, .section-heading { color:var(--white); }
+        .hero-quote { color:var(--gold); }
+        section { background:var(--surface-1); }
+        .benefit-card, .outcome-card, .testimonial-card, .price-card, .audience-card { background:var(--surface-4); border-radius:20px; box-shadow:var(--shadow-card); border: 1px solid var(--line); }
+        .cta-section { background: linear-gradient(180deg,var(--surface-2) 0%,var(--footer) 100%); }
+        .footer { background: var(--footer); }
+        .cta-btn { background: #12283a; color: #fff; border-radius: 999px; }
+        .cta-btn:hover { background: #0f5b8d; }
+        
         .reveal { opacity:0; transform:translateY(40px); transition:opacity .8s ease,transform .8s ease; }
         .reveal.visible { opacity:1; transform:translateY(0); }
 
         @media(max-width:900px) {
-            .theory-grid,.facilitator-grid { grid-template-columns:1fr; }
+            .theory-grid,.facilitator-grid,.investment-grid { grid-template-columns:1fr; }
             .hero { padding-top:120px; }
         }
     </style>
@@ -156,7 +187,6 @@
     <div class="hero-logo">
         <img src="https://managementinnovations.co.in/wp-content/uploads/2021/04/Management-Innovations-Logo.png" alt="Management Innovations">
     </div>
-
     <div class="badge">Management Innovations · Vision to Implementation</div>
     <div class="hero-tagline">An Exclusive Leadership Workshop</div>
     <h1 class="hero-title">Creating<br><em>Future Ready</em><br>Organizations</h1>
@@ -195,10 +225,10 @@
                 <div class="section-label">Foundation</div>
                 <h2 class="section-heading">About <em>Theory U</em></h2>
                 <p>Developed by Dr. Otto Scharmer at MIT Sloan, Theory U blends rigorous action research with practices that connect science, consciousness, and profound social innovation.</p>
-                <p>Helping teams sense emerging futures, prototype solutions, and scale systemic change. The U-shaped journey moves from co-initiating to co-evolving — a complete transformation of leadership.</p>
+                <p>Over three decades, it has guided thousands of organizations worldwide as a leadership framework — helping teams sense emerging futures and scale systemic change.</p>
                 <div style="margin-top:40px;">
-                    <div class="theory-books-label">Framework Creator</div>
-                    <p style="font-size: 14px; opacity: 0.8;">Groundbreaking work used by Fortune 500 companies and global NGOs to lead through complexity.</p>
+                    <div class="theory-books-label">Essential Reading</div>
+                    <p style="font-size: 14px; opacity: 0.8;">The U-shaped journey moves from co-initiating to co-sensing to presencing, then co-creating and co-evolving.</p>
                 </div>
             </div>
             <div>
@@ -206,6 +236,29 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- JOURNEY MAP (RESTORED) -->
+<section style="background: var(--surface-2);">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">The Journey</div>
+      <h2 class="section-heading">Crossing the <em>Threshold</em></h2>
+      <p style="max-width: 800px; margin-bottom: 40px;">Stepping into the field of the future — from downloading past patterns all the way to performing by operating on the whole.</p>
+      <img src="https://managementinnovations.co.in/wp-content/uploads/2021/04/crossing-the-threshold.jpg" alt="Theory U Journey Map" style="width:100%; border-radius:15px; box-shadow: var(--shadow-card);">
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS (RESTORED) -->
+<section class="clients-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Global Reach</div>
+      <h2 class="section-heading">Trusted by <em>World-Class Organizations</em></h2>
+      <img src="https://managementinnovations.co.in/wp-content/uploads/2021/04/clients-logos.png" alt="Client Logos" class="clients-img" style="width:100%; opacity: 0.9;">
+    </div>
+  </div>
 </section>
 
 <!-- BENEFITS -->
@@ -231,64 +284,102 @@
     <div class="section-inner">
         <div class="reveal">
             <div class="section-label">Programme</div>
-            <h2 class="section-heading">The <em>Journey</em></h2>
+            <h2 class="section-heading">Two Days of <em>Deep Transformation</em></h2>
         </div>
-        <div class="reveal">
+        <div class="reveal" style="margin-top:48px;">
             <div class="agenda-tabs">
-                <div class="agenda-tab active" onclick="switchTab('day1',this)">Day One: Sensing</div>
-                <div class="agenda-tab" onclick="switchTab('day2',this)">Day Two: Realizing</div>
+                <div class="agenda-tab active" onclick="switchTab('day1',this)">Day One</div>
+                <div class="agenda-tab" onclick="switchTab('day2',this)">Day Two</div>
             </div>
             <div id="day1" class="agenda-panel active">
                 <div class="agenda-day-title">Foundation & Awareness</div>
                 <div class="agenda-day-subtitle">June 06, 2026</div>
                 <div class="agenda-items">
-                    <div class="agenda-item"><div class="agenda-num">01</div><div class="agenda-item-content"><div class="agenda-item-title">Management Theory Limits</div><div class="agenda-item-desc">Why traditional frameworks fail in today's complexity.</div></div></div>
-                    <div class="agenda-item"><div class="agenda-num">02</div><div class="agenda-item-content"><div class="agenda-item-title">The New Paradigm</div><div class="agenda-item-desc">Integrating consciousness and systemic thinking.</div></div></div>
-                    <div class="agenda-item"><div class="agenda-num">03</div><div class="agenda-item-content"><div class="agenda-item-title">The Four Levels of Listening</div><div class="agenda-item-desc">Transforming how you hear and connect with others.</div></div></div>
+                    <div class="agenda-item"><div class="agenda-num">01</div><div class="agenda-item-content"><div class="agenda-item-title">Bankruptcy of Current Theory</div><div class="agenda-item-desc">Why traditional management frameworks are reaching their limits.</div></div></div>
+                    <div class="agenda-item"><div class="agenda-num">02</div><div class="agenda-item-content"><div class="agenda-item-title">A New Leadership Paradigm</div><div class="agenda-item-desc">Integrating consciousness, purpose, and systemic thinking.</div></div></div>
+                    <div class="agenda-item"><div class="agenda-num">03</div><div class="agenda-item-content"><div class="agenda-item-title">Deep Listening Techniques</div><div class="agenda-item-desc">Mastering the four levels of listening that transform connections.</div></div></div>
                 </div>
             </div>
             <div id="day2" class="agenda-panel">
                 <div class="agenda-day-title">Transformation & Mastery</div>
                 <div class="agenda-day-subtitle">June 07, 2026</div>
                 <div class="agenda-items">
-                    <div class="agenda-item"><div class="agenda-num">04</div><div class="agenda-item-content"><div class="agenda-item-title">Diagnosing Culture</div><div class="agenda-item-desc">Identifying hidden patterns that sabotage performance.</div></div></div>
-                    <div class="agenda-item"><div class="agenda-num">05</div><div class="agenda-item-content"><div class="agenda-item-title">Collective Intelligence</div><div class="agenda-item-desc">Harnessing the distributed wisdom of your team.</div></div></div>
-                    <div class="agenda-item"><div class="agenda-num">06</div><div class="agenda-item-content"><div class="agenda-item-title">Connecting to Purpose</div><div class="agenda-item-desc">Inner practices for authentic leadership impact.</div></div></div>
+                    <div class="agenda-item"><div class="agenda-num">04</div><div class="agenda-item-content"><div class="agenda-item-title">Diagnosing Team Cultures</div><div class="agenda-item-desc">Identify hidden patterns that silently sabotage performance.</div></div></div>
+                    <div class="agenda-item"><div class="agenda-num">05</div><div class="agenda-item-content"><div class="agenda-item-title">Collective Intelligence</div><div class="agenda-item-desc">Harnessing distributed wisdom to solve complex adaptive challenges.</div></div></div>
+                    <div class="agenda-item"><div class="agenda-num">06</div><div class="agenda-item-content"><div class="agenda-item-title">Connecting to Higher Purpose</div><div class="agenda-item-desc">Inner practices that align your leadership with what matters most.</div></div></div>
                 </div>
             </div>
         </div>
     </div>
+</section>
+
+<!-- TESTIMONIALS (FULL LIST) -->
+<section class="testimonials-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Voices</div>
+      <h2 class="section-heading">Participant <em>Experiences</em></h2>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">If you listen to people from the heart, you get to know a lot many things and can transform organizations better.</p><div class="testimonial-author">Harshal Shah</div><div class="testimonial-role">Founder & Director</div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">The culture shift is: when you face a problem, park your reaction, think with a peaceful mind.</p><div class="testimonial-author">Sanjay Chaturvedi</div><div class="testimonial-role">VP Sales</div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">In 35 years across organisations, I found it has something very special for all of us.</p><div class="testimonial-author">Rajeev Bhadauria</div><div class="testimonial-role">Advisor – Corporate Affairs</div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><p class="testimonial-text">Levels of listening created greater ways for me to be at ease in my global purpose.</p><div class="testimonial-author">Joy Perreras</div><div class="testimonial-role">Leadership Practitioner</div></div>
+    </div>
+  </div>
 </section>
 
 <!-- FACILITATOR -->
 <section class="facilitator-section">
     <div class="section-inner">
-        <div class="reveal">
-            <div class="section-label">Your Guide</div>
-            <h2 class="section-heading">Manoj <em>Onkar</em></h2>
-        </div>
         <div class="facilitator-grid reveal">
-            <div>
+            <div class="facilitator-image-wrap">
                 <img src="https://managementinnovations.co.in/wp-content/uploads/2021/04/Manoj-Onkar.jpg" alt="Manoj Onkar" class="facilitator-photo">
             </div>
             <div>
+                <h3 class="facilitator-name">Manoj Onkar</h3>
                 <div class="facilitator-title">OD Consultant · Master Coach · Senior Facilitator</div>
-                <p class="facilitator-bio">With over 28 years of experience in organisational development, Manoj is an expert who has certified hundreds of coaches and trainers. Since 2015, he has specialized in Theory U to elevate leadership consciousness worldwide.</p>
+                <p class="facilitator-bio">With over 28 years of experience, Manoj has certified hundreds of coaches and trainers. Since 2015, his team has leveraged Theory U to transform how leaders think, listen, and lead across various sectors.</p>
                 <div class="expertise-tags">
                     <span class="expertise-tag">Culture</span>
+                    <span class="expertise-tag">Leadership</span>
                     <span class="expertise-tag">Strategy</span>
-                    <span class="expertise-tag">Innovation</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
+<!-- ENROLMENT / INVESTMENT -->
+<section class="investment-section">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label">Investment</div>
+            <h2 class="section-heading">Enrolment <em>Options</em></h2>
+        </div>
+        <div class="investment-grid reveal" style="margin-top:40px;">
+            <div class="price-card" style="padding: 40px; text-align: center;">
+                <div class="price-type">Individual</div>
+                <div class="price-amount">₹47,000</div>
+                <div class="price-gst">+ GST</div>
+                <a href="https://rzp.io/rzp/CFRO1" class="cta-btn" style="margin-top: 20px;">Register Individual</a>
+            </div>
+            <div class="price-card featured" style="padding: 40px; text-align: center; border: 2px solid var(--gold);">
+                <div class="price-badge" style="top: -15px; left: 50%; transform: translateX(-50%); width: 120px;">Best Value</div>
+                <div class="price-type">Group (3+)</div>
+                <div class="price-amount">₹40,000</div>
+                <div class="price-gst">per person + GST</div>
+                <a href="https://rzp.io/rzp/CFRO" class="cta-btn" style="margin-top: 20px; background: var(--gold);">Register Group</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA (FIXED NNESTING) -->
 <section class="cta-section">
     <div class="reveal">
         <h2 class="cta-title">Transform Your <em>Leadership Today</em></h2>
-        <p class="cta-subtitle">Join leaders worldwide creating future-ready cultures of authentic connection, co-creation, and purpose-driven impact.</p>
+        <p class="cta-subtitle">Join leaders worldwide creating future-ready cultures of authentic connection and purpose-driven impact.</p>
         
         <div class="cta-btn-container">
             <a href="https://rzp.io/rzp/CFRO1" target="_blank" class="cta-btn">Individual Registration</a>
@@ -313,7 +404,7 @@
     <div class="footer-logo">
         <img src="https://managementinnovations.co.in/wp-content/uploads/2021/04/Management-Innovations-Logo.png" alt="Management Innovations">
     </div>
-    <div class="footer-tagline">© 2026 Management Innovations · Vision to Implementation · June 06, 07, 2026</div>
+    <div class="footer-tagline">Vision to Implementation · June 06, 07, 2026</div>
 </footer>
 
 <script>
@@ -324,7 +415,6 @@
         el.classList.add('active');
     }
     
-    // Initial display setup
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('day2').style.display = 'none';
     });
