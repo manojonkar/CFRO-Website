@@ -607,28 +607,17 @@ section { background:var(--surface-1); }
 </footer>
 
 <script>
-  function switchTab(id, el) {
-    document.querySelectorAll('.agenda-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.agenda-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    el.classList.add('active');
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
   <a href="https://www.theoryuindia.com" target="_blank"
    style="
      position: fixed;
-     right: 20;
-     top: 40%;
+     right: 0;
+     top: 50%;
      transform: translateY(-50%) rotate(-90deg);
      transform-origin: right center;
      background: #2d5a8e;
      color: #fff;
      font-family: Georgia, serif;
-     font-style: normal;
+     font-style: italic;
      font-size: 16px;
      padding: 12px 28px;
      text-decoration: none;
@@ -641,6 +630,6 @@ section { background:var(--surface-1); }
    onmouseover="this.style.background='#1e3f66'; this.style.paddingBottom='18px';"
    onmouseout="this.style.background='#2d5a8e'; this.style.paddingBottom='12px';">
   Reserve your place
-</a>
+</a></a>
 </body>
 </html>
